@@ -87,26 +87,36 @@
 }
 
 /*------search-----------*/
-.catgrories {
-  background-color: #f6f9fc;
-  padding: 0px 30px;
-  border-radius: 5px;
-  height: 6vh;
-  margin-top: 5px;
+.container .d_flex {
+
+  position: relative;
 }
 
-.catgrories span {
+.categories {
+
+  background-color: salmon;
+  padding: 0px 30px;
+  border-radius: 20px;
+  height: fit-content;
+  margin-top: 20px;
+}
+
+.categories span {
   margin-right: 20px;
   font-size: 30px;
-  margin-top: 10px;
+  margin: 5px;
 }
 
-.catgrories h4 {
+.categories h4 {
   font-weight: 500;
-  margin-top: 12px;
+  text-align: center;
+  font-size: 20px;
+
+  margin: 5px;
+
 }
 
-.catgrories h4 i {
+.categories h4 i {
   margin-left: 10px;
 }
 
@@ -138,10 +148,10 @@ header ul li a:hover {
 }
 
 .search.active {
-  height: 12vh;
+  height: fit-content;
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
   width: 100%;
   background-color: #fff;
   box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.2);

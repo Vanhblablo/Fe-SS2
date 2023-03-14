@@ -1,5 +1,5 @@
 import React from "react";
-import Catg from "./Catg";
+// import Catg from "./Catg";
 import ShopCart from "./ShopCart";
 import "./style.css";
 
@@ -13,7 +13,10 @@ const Shop = ({ addToCart, shopItems }) => {
           <div className="contentWidth">
             <div className="heading d_flex">
               <div className="heading-left row  f_flex">
-                {/* <h2>Mobile Phones</h2> */}
+                {/* category */}
+                <h1>
+                  Category<i className="fa-solid fa-caret-down"></i>
+                </h1>
               </div>
               <div className="heading-right row ">
                 <span>View all</span>
