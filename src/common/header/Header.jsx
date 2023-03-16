@@ -3,7 +3,9 @@ import "./Header.css";
 // import Head from "./Head";
 import Search from "./Search";
 import Navbar from "./Navbar";
-const Header = ({ CartItem }) => {
+import {useProduct} from "../../context/ProductContext";
+const Header = () => {
+  const { CartItem } = useProduct()
   return (
     <>
       {/* <Head /> */}

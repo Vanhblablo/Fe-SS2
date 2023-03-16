@@ -45,18 +45,27 @@
 //export default ShopCart
 
 import React, { useState } from "react";
+import {useHistory} from "react-router-dom";
+import {useProduct} from "../../context/ProductContext";
 
 const ShopCart = ({ shopItems, addToCart }) => {
+  const history = useHistory()
+  const { setProductDetail } = useProduct()
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);
   };
 
+  const handleRedirectToProductDetail = (product) => {
+    setProductDetail(product)
+    history.push(`/details/${product.id}`)
+  }
+
   return (
     <>
       {shopItems.map((shopItems, index) => {
         return (
-          <div className="box">
+          <div className="box" onClick={() => handleRedirectToProductDetail(shopItems)}>
             <div className="product mtop">
               <div className="img">
                 <span className="discount">{shopItems.discount}% Off</span>
@@ -80,7 +89,10 @@ const ShopCart = ({ shopItems, addToCart }) => {
                   {/* step : 3  
                      if hami le button ma click garryo bahne 
                     */}
-                  <button onClick={() => addToCart(shopItems)}>
+                  <button onClick={(e) => {
+                    e.stopPropagation()
+                    addToCart(shopItems)
+                  }}>
                     <i className="fa fa-plus"></i>
                   </button>
                 </div>

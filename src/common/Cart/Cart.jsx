@@ -1,8 +1,10 @@
 import React from "react"
 import "./style.css"
+import {useProduct} from "../../context/ProductContext";
 
-const Cart = ({ CartItem, addToCart, decreaseQty }) => {
+const Cart = () => {
   // Stpe: 7   calucate total of items
+  const { CartItem, addToCart, decreaseQty } = useProduct()
   const totalPrice = CartItem.reduce((price, item) => price + item.qty * item.price, 0)
 
   // prodcut qty total
