@@ -33,7 +33,7 @@ export const ProductDetailsPage = () => {
     }
 
     return <Stack direction={"row"} py={8} spacing={4} justifyContent={"center"}>
-        <CardMedia sx={{width: 350, height: 400}} component={"img"} image={"public/images/shops/A1.jpg"}
+        <CardMedia sx={{width: 350, height: 400}} component={"img"} image={productDetail.cover}
                    title={productDetail.name}/>
         <Card variant={"outlined"} className={"product"}>
             <CardContent>
