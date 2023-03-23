@@ -59,7 +59,7 @@ function Search({ CartItem }) {
             {/* <i className="fa fa-user icon-circle" /> */}
             {/* <LoginSignup /> */}
             <Button onClick={handleOpenLoginModal}>
-              <Typography sx={{ color: '#000000', textTransform: 'none' }}>Login</Typography>
+              <Typography sx={{ color: '#000000', textTransform: 'none' }}>Sign In</Typography>
             </Button>
             <Button onClick={handleOpenRegisterModal}>
               <Typography sx={{ color: '#000000', textTransform: 'none' }}>Sign Up</Typography>
