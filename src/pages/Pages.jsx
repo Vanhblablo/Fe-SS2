@@ -1,16 +1,13 @@
-import React from "react";
-import Home from "../components/MainPage/Home";
-import FlashDeals from "../components/flashDeals/FlashDeals";
-import TopCate from "../components/top/TopCate";
-import NewArrivals from "../components/newarrivals/NewArrivals";
-import Discount from "../components/discount/Discount";
-import Shop from "../components/shops/Shop";
-import Annocument from "../components/annocument/Annocument";
-import Wrapper from "../components/wrapper/Wrapper";
-import {useProduct} from "../context/ProductContext";
+import React from 'react';
+import Home from '../components/MainPage/Home';
+import Shop from '../components/shops/Shop';
+import Wrapper from '../components/wrapper/Wrapper';
+import { useProduct } from '../context/ProductContext';
 
-const Pages = () => {
-  const { productItems, addToCart, CartItem, shopItems } = useProduct()
+function Pages() {
+  const {
+    addToCart, CartItem, shopItems,
+  } = useProduct();
   return (
     <>
       <Home CartItem={CartItem} />
@@ -23,6 +20,6 @@ const Pages = () => {
       <Wrapper />
     </>
   );
-};
+}
 
 export default Pages;
