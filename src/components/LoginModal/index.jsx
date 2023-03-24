@@ -20,6 +20,7 @@ export function LoginModal({ open, onClose }) {
     try {
       await axios.post('/auth/login', value);
       toast.success('Login successful');
+      onClose();
     } catch (err) {
       toast.error('Something went wrong, try again later');
     }
@@ -27,8 +28,8 @@ export function LoginModal({ open, onClose }) {
 
   const validate = useCallback((value) => {
     const error = {};
-    if (!value.userName) {
-      error.userName = 'User Name is required';
+    if (!value.username) {
+      error.username = 'User Name is required';
     }
     if (!value.password) {
       error.password = 'Password is required';
@@ -60,17 +61,17 @@ export function LoginModal({ open, onClose }) {
               <>
                 <Grid container spacing={2}>
                   <Field
-                    name="userName"
+                    name="username"
                     render={({ input, meta }) => (
                       <Grid item xs={12}>
-                        <FormControl fullWidth required error={errors.userName && meta.touched}>
+                        <FormControl fullWidth required error={errors.username && meta.touched}>
                           <FormLabel>
                             <Typography>User Name</Typography>
                           </FormLabel>
                           <OutlinedInput {...input} />
-                          {errors.userName && meta.touched && (
+                          {errors.username && meta.touched && (
                           <FormHelperText>
-                            {errors.userName}
+                            {errors.username}
                           </FormHelperText>
                           )}
                         </FormControl>

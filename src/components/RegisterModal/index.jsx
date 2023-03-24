@@ -19,6 +19,7 @@ export function RegisterModal({ open, onClose }) {
     try {
       await axios.post('/auth/register', value);
       toast.success('Register successful');
+      onClose();
     } catch (err) {
       toast.error('Something went wrong, try again later');
     }
@@ -32,8 +33,8 @@ export function RegisterModal({ open, onClose }) {
     if (!value.lastName) {
       error.lastName = 'Last Name is required';
     }
-    if (!value.userName) {
-      error.userName = 'User Name is required';
+    if (!value.username) {
+      error.username = 'User Name is required';
     }
     if (!value.phoneNumber) {
       error.phoneNumber = 'Phone Number is required';
@@ -110,17 +111,17 @@ export function RegisterModal({ open, onClose }) {
                     )}
                   />
                   <Field
-                    name="userName"
+                    name="username"
                     render={({ input, meta }) => (
                       <Grid item xs={12}>
-                        <FormControl fullWidth required error={errors.userName && meta.touched}>
+                        <FormControl fullWidth required error={errors.username && meta.touched}>
                           <FormLabel>
                             <Typography>User Name</Typography>
                           </FormLabel>
                           <OutlinedInput {...input} />
-                          {errors.userName && meta.touched && (
+                          {errors.username && meta.touched && (
                           <FormHelperText>
-                            {errors.userName}
+                            {errors.username}
                           </FormHelperText>
                           )}
                         </FormControl>
